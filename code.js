@@ -1,12 +1,61 @@
 const canvas = document.getElementById('canvas');
 
-let count = 40;
+let size = 30;
+let color = 'black';
+resetGrid(size, color);
+
+
+
+const b_changeSize = document.getElementById('b_gridSize');
+b_changeSize.addEventListener('click', ()=>{
+    let count = prompt("Enter grid size:");
+    size = count;
+    resetGrid(size, color);
+});
+function resetGrid(count, color){
+    
+    canvas.innerHTML='';
 for(let i = 0; i<count*count; i++){
 
     const grid = document.createElement('div');
     grid.style.width = `${480 / count}px`;
         grid.style.height = `${480 / count}px`;
+        grid.classList.add('littles');
+        grid.addEventListener('mouseover', ()=>{
+            grid.style.backgroundColor = color;
+        })
+        
+
 
     canvas.appendChild(grid);
 
 }
+}
+// Get all elements with class "littles"
+const littles = document.querySelectorAll('.littles');
+
+// Iterate and log each element
+
+
+
+const b_black = document.getElementById('b_black');
+b_black.addEventListener('click', ()=>{
+    color = 'black';
+    littles.forEach(element => {
+        element.addEventListener('mouseover', ()=>{
+            element.style.backgroundColor = color;
+        })
+    });
+});
+
+
+const b_white = document.getElementById('b_white');
+b_white.addEventListener('click', ()=>{
+    color = 'white';
+    littles.forEach(element => {
+        element.addEventListener('mouseover', ()=>{
+            element.style.backgroundColor = color;
+        })
+    });
+});
+
