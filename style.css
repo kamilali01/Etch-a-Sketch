@@ -20,29 +20,40 @@ h3{
     display: flex;
     width: 100%;
     justify-content: center;
+    align-items: center;
 }
 #tools{
     display: flex;
     flex-direction: column;
     background-color: #D6A14F;
     width: 250px;
-    height: 480px;
+    height: 300px;
     justify-content: space-around;
     align-items: center;
     border: 5px solid #7B6F5A;
     margin-right: 15px;
 }
 .tool{
-    background-color: #C6A98D;
+    background-color: #300c1c;
     width: 150px;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
+    border-radius: 5px;
 }
-.tool:first-child{
-    margin-bottom: 60px;
+.tools:first-child{
+    background-color: #210011;
+}
+#b_random{
+    background-color: #5a1532;
+}
+#b_white{
+    background-color: #ff6124;
+}
+.tool:last-child{
+    background-color: #d41c1c;
 }
 #canvas{
     display: flex;
@@ -55,5 +66,6 @@ h3{
 }
 #canvas div{
     background-color: white;
-    border: 1px solid black;
+    border: 0.5px solid black;
+    box-shadow: 0 0 0 0.5px black;
 }

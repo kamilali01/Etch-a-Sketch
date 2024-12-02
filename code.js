@@ -9,6 +9,9 @@ resetGrid(size, color);
 const b_changeSize = document.getElementById('b_gridSize');
 b_changeSize.addEventListener('click', ()=>{
     let count = prompt("Enter grid size:");
+    if(count=='' || count==undefined){
+        count = 30;
+    }
     size = count;
     resetGrid(size, color);
 });
@@ -21,9 +24,12 @@ for(let i = 0; i<count*count; i++){
     grid.style.width = `${480 / count}px`;
         grid.style.height = `${480 / count}px`;
         grid.classList.add('littles');
-        grid.addEventListener('mouseover', ()=>{
-            grid.style.backgroundColor = color;
-        })
+        
+            grid.addEventListener('mouseover', ()=>{
+                grid.style.backgroundColor = color;
+            })
+        
+        
         
 
 
@@ -40,35 +46,41 @@ for(let i = 0; i<count*count; i++){
 
 const b_black = document.getElementById('b_black');
 b_black.addEventListener('click', ()=>{
-    const littles = document.querySelectorAll('.littles');
+    
+        const littles = document.querySelectorAll('.littles');
     color = 'black';
     littles.forEach(element => {
         element.addEventListener('mouseover', ()=>{
             element.style.backgroundColor = color;
         })
     });
+    
 });
 
 
 const b_white = document.getElementById('b_white');
 b_white.addEventListener('click', ()=>{
-    const littles = document.querySelectorAll('.littles');
+    
+        const littles = document.querySelectorAll('.littles');
     color = 'white';
     littles.forEach(element => {
         element.addEventListener('mouseover', ()=>{
             element.style.backgroundColor = color;
         })
     });
+    
 });
 
 const b_random = document.getElementById('b_random');
 b_random.addEventListener('click', ()=>{
-    const littles = document.querySelectorAll('.littles');
+    
+        const littles = document.querySelectorAll('.littles');
     littles.forEach(element => {
         element.addEventListener('mouseover', ()=>{
             element.style.backgroundColor = randomColor();
         })
     });
+    
 });
 
 
@@ -91,3 +103,5 @@ b_clear.addEventListener('click', ()=>{
         canvas.appendChild(element);
     });
 })
+
+
