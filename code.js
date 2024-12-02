@@ -9,6 +9,11 @@ resetGrid(size, color);
 const b_changeSize = document.getElementById('b_gridSize');
 b_changeSize.addEventListener('click', ()=>{
     let count = prompt("Enter grid size:");
+    
+        while(count>=100){
+            count = prompt("Write less than 100");
+        }
+    
     if(count=='' || count==undefined){
         count = 30;
     }

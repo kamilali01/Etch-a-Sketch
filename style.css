@@ -8,6 +8,8 @@ body{
     text-align: center;
     /* background-color: #4E3B2E; */
     background-image: url("./img/background_img.jpg");
+    background-size: cover;
+    background-position: center;
 }
 #b_gridSize{
     background-color:#D6A14F;
@@ -68,4 +70,11 @@ h3{
     background-color: white;
     border: 0.5px solid black;
     box-shadow: 0 0 0 0.5px black;
+}
+.footer{
+    text-align: center;
+    width: 100;
+    height: 20px;
+    background-color: #7B6F5A;
+    margin-top: 25px;
 }
