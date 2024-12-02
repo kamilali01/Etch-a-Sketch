@@ -32,7 +32,7 @@ for(let i = 0; i<count*count; i++){
 }
 }
 // Get all elements with class "littles"
-const littles = document.querySelectorAll('.littles');
+
 
 // Iterate and log each element
 
@@ -40,6 +40,7 @@ const littles = document.querySelectorAll('.littles');
 
 const b_black = document.getElementById('b_black');
 b_black.addEventListener('click', ()=>{
+    const littles = document.querySelectorAll('.littles');
     color = 'black';
     littles.forEach(element => {
         element.addEventListener('mouseover', ()=>{
@@ -51,6 +52,7 @@ b_black.addEventListener('click', ()=>{
 
 const b_white = document.getElementById('b_white');
 b_white.addEventListener('click', ()=>{
+    const littles = document.querySelectorAll('.littles');
     color = 'white';
     littles.forEach(element => {
         element.addEventListener('mouseover', ()=>{
@@ -61,12 +63,14 @@ b_white.addEventListener('click', ()=>{
 
 const b_random = document.getElementById('b_random');
 b_random.addEventListener('click', ()=>{
+    const littles = document.querySelectorAll('.littles');
     littles.forEach(element => {
         element.addEventListener('mouseover', ()=>{
             element.style.backgroundColor = randomColor();
         })
     });
 });
+
 
 function randomColor() {
     let letters = '0123456789ABCDEF';
@@ -76,3 +80,14 @@ function randomColor() {
     }
     return color;
 }
+
+const b_clear = document.getElementById('b_clear');
+b_clear.addEventListener('click', ()=>{
+    const littles = document.querySelectorAll('.littles');
+    canvas.innerHTML='';
+    color='white';
+    littles.forEach(element => {
+        element.style.backgroundColor = color;
+        canvas.appendChild(element);
+    });
+})
